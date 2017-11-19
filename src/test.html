@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <style>
+    .fix{
+      width: 720px;
+      height: 640px;
+      background-color: lightcoral;
+      margin: 0 auto;
+    }
+    .full{
+      width: 100%;
+      height: 640px;
+      background-color: lawngreen;
+    }
+  </style>
+</head>
+<body>
+<div class="fix">
+</div>
+<button>change</button>
+<script>
+  var nav = navigator.userAgent
+  var partterm = /Android/g
+  var div = document.getElementsByTagName('div')[0]
+  var btn = document.getElementsByTagName('button')[0]
+  btn.onclick = function () {
+    console.log('click')
+    div.className = 'full'
+  }
+  console.log(div)
+  console.log(btn)
+  if(partterm.test(nav)){
+      div.className = 'full'
+    console.log('full')
+    console.log(div)
+  } else {
+      div.className = 'fix'
+    console.log('fix')
+    console.log(div)
+  }
+</script>
+</body>
+</html>
